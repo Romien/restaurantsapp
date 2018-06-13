@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+   Homepage - {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+    {% for dish in dishes %}
+    <h2>
+        <a href="{% url 'disho_detail' thisslug=dish.slug %}">
+            {{ dish.name }}
+        </a>
+    </h2>
+    <p>{{ dish.description }}</p>
+    {% endfor %}
+{% endblock content %}
